@@ -13,8 +13,7 @@ Works best with face decks.
 * **Toggle**
 Toggle button is just next to your opponent's hero.
 
-![demo](https://cloud.githubusercontent.com/assets/11247099/24262731/f0b0e1d0-1035-11e7-8649-c1e2a40c8481.jpg)
-*This is the screenshot of the first version*
+![demo](https://cloud.githubusercontent.com/assets/11247099/24270632/f14c1c84-1050-11e7-9fe7-45d9f0f77fec.png)
 
 ## Install
 1. Download the latest `FaceOnly.dll` from [Releases](https://github.com/antfu/FaceOnly/releases)

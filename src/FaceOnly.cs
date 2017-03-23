@@ -39,7 +39,7 @@ namespace HDT.Plugins.FaceOnly
 
 		public Version Version
 		{
-			get { return new Version(0, 0, 2); }
+			get { return new Version(0, 0, 3); }
 		}
 		#endregion
 

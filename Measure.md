@@ -1,0 +1,12 @@
+Measure the hero position from screenshot
+
+These data from my screenshot with 1825x1027:
+
+| Subject | Measured(px) | Rate to Window Height
+| ---             | ---  |
+| Window Height   | 1027 | 1
+| Height          | 178  | 0.173320351
+| Width           | 162  | 0.157740993
+| Top             | 95   | 0.092502434
+| Curve Height    | 86   | 0.083739046 | 0.00097371 (Scale)
+| Midline offset  | 4    | 0.003894839

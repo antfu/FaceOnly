@@ -18,6 +18,13 @@
 			  Width="{Binding ElementName=root, Path=ActualHeight,
 					  Converter={StaticResource MathConverter},
 					  ConverterParameter=@VALUE*1.4}" >
+			<!--Midline Offset-->
+			<Grid.RenderTransform>
+				<TranslateTransform Y="0" X="{Binding ElementName=root, Path=ActualHeight,
+					  Converter={StaticResource MathConverter},
+					  ConverterParameter=@VALUE*0.003894839}" />
+			</Grid.RenderTransform>
+			
 			<Grid.RowDefinitions>
 				<RowDefinition Height="43.5*"/>
 				<RowDefinition Height="56.5*"/>
@@ -26,18 +33,21 @@
 				<Grid>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition/>
+						<!--Width-->
 						<ColumnDefinition Width="{Binding ElementName=root, Path=ActualHeight,
 												 Converter={StaticResource MathConverter},
-												 ConverterParameter=@VALUE*0.17}"/>
+												 ConverterParameter=@VALUE*.155740993}"/>
 						<ColumnDefinition />
 					</Grid.ColumnDefinitions>
 					<Grid.RowDefinitions>
+						<!--Top-->
 						<RowDefinition Height="{Binding ElementName=root, Path=ActualHeight,
 												 Converter={StaticResource MathConverter},
-												 ConverterParameter=@VALUE*0.09}"/>
+												 ConverterParameter=@VALUE*.092502434}"/>
+						<!--Height-->
 						<RowDefinition Height="{Binding ElementName=root, Path=ActualHeight,
 												 Converter={StaticResource MathConverter},
-												 ConverterParameter=@VALUE*0.18}"/>
+												 ConverterParameter=@VALUE*.173320351}"/>
 						<RowDefinition/>
 					</Grid.RowDefinitions>
 
@@ -46,12 +56,39 @@
 					<Border Grid.Column="1" Grid.Row="0" Background="{Binding ElementName=bg,Path=Background}" SnapsToDevicePixels="True">
 						<TextBlock Text="Face Only" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20px" FontWeight="Bold" Foreground="White" Margin="0,5,0,0"/>
 					</Border>
+					
 					<Border Grid.Column="2" Grid.Row="0" Background="{Binding ElementName=bg,Path=Background}" SnapsToDevicePixels="True"/>
 					<Border Grid.Column="0" Grid.Row="1" Background="{Binding ElementName=bg,Path=Background}" SnapsToDevicePixels="True"/>
 					<Border Grid.Column="2" Grid.Row="1" Background="{Binding ElementName=bg,Path=Background}" SnapsToDevicePixels="True"/>
 					<Border Grid.Column="0" Grid.Row="2" Background="{Binding ElementName=bg,Path=Background}" SnapsToDevicePixels="True"/>
 					<Border Grid.Column="1" Grid.Row="2" Background="{Binding ElementName=bg,Path=Background}" SnapsToDevicePixels="True"/>
 					<Border Grid.Column="2" Grid.Row="2" Background="{Binding ElementName=bg,Path=Background}" SnapsToDevicePixels="True"/>
+
+					<Canvas Grid.Column="1" Grid.Row="1" Width="81" Height="86" HorizontalAlignment="Right" VerticalAlignment="Top">
+						<Canvas.RenderTransform>
+							<ScaleTransform ScaleX="{Binding ActualHeight, ConverterParameter=@VALUE*.00097371, Converter={StaticResource MathConverter}, ElementName=root}" 
+											ScaleY="{Binding ActualHeight, ConverterParameter=@VALUE*.00097371, Converter={StaticResource MathConverter}, ElementName=root}"
+											CenterX="81"
+											CenterY="0"/>
+						</Canvas.RenderTransform>
+						<Canvas.Resources/>
+						<Path Fill="{Binding ElementName=bg,Path=Background}" Data="M0.000 -0.000 C15.000 -0.600 70.600 22.200 81.000 86.000 C96.824 -14.958 100.245 -18.742 0.000 -0.000 Z"/>
+					</Canvas>
+
+					<Canvas Grid.Column="1" Grid.Row="1" Width="81" Height="86" HorizontalAlignment="Left" VerticalAlignment="Top">
+						<Canvas.RenderTransform>
+							<TransformGroup>
+								<ScaleTransform ScaleX="-1" ScaleY="1" CenterX="40.5"/>
+								<ScaleTransform ScaleX="{Binding ActualHeight, ConverterParameter=@VALUE*0.00097371, Converter={StaticResource MathConverter}, ElementName=root}" 
+											ScaleY="{Binding ActualHeight, ConverterParameter=@VALUE*.00097371, Converter={StaticResource MathConverter}, ElementName=root}"
+											CenterX="0"
+											CenterY="0"/>
+							</TransformGroup>
+						</Canvas.RenderTransform>
+						<Canvas.Resources/>
+						<Path Fill="{Binding ElementName=bg,Path=Background}" Data="M0.000 -0.000 C15.000 -0.600 70.600 22.200 81.000 86.000 C96.824 -14.958 100.245 -18.742 0.000 -0.000 Z"/>
+					</Canvas>
+					
 				</Grid>
 			</Grid>
 		</Grid>
