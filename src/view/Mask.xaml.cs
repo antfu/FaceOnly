@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FaceOnly
+namespace HDT.Plugins.FaceOnly
 {
 	/// <summary>
 	/// Interaction logic for Mask.xaml

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace FaceOnly
+namespace HDT.Plugins.FaceOnly
 {
 	// Does a math equation on the bound value.
 	// Use @VALUE in your mathEquation as a substitute for bound value

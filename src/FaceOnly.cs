@@ -6,7 +6,7 @@ using Hearthstone_Deck_Tracker.Plugins;
 using System.ComponentModel;
 using System.Windows.Data;		 
 
-namespace FaceOnly
+namespace HDT.Plugins.FaceOnly
 {
     public class FaceOnly : IPlugin
     {
@@ -46,13 +46,11 @@ namespace FaceOnly
 			get { return null; }
 		}
 
-
 		public void OnButtonPress()
-        {
-            MessageBox.Show("Hello");
-        }
+		{										 
+		}
 
-        public void OnLoad()
+		public void OnLoad()
         {
             mask = new Mask();
 			mask.Opacity = opacity;
