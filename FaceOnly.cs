@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using Hearthstone_Deck_Tracker.API;
 using Hearthstone_Deck_Tracker.Plugins;
 using System.ComponentModel;
-using System.Windows.Data;
+using System.Windows.Data;		 
 
 namespace FaceOnly
 {
@@ -64,11 +64,11 @@ namespace FaceOnly
 			GameEvents.OnTurnStart.Add(a => mask.TurnStart());
 			GameEvents.OnGameEnd.Add(mask.GameEnd);
 
-			Canvas.SetTop(mask, 0);
+			Canvas.SetTop(mask, -2);
 			Canvas.SetLeft(mask, 0);
 			Canvas.SetBottom(mask, 0);
 			Canvas.SetRight(mask, 0);					
-			Canvas.SetZIndex(mask, -100);
+			Canvas.SetZIndex(mask, -1);
 
 			Binding widthBinding = new Binding();
 			widthBinding.Mode = BindingMode.OneWay;
@@ -85,10 +85,7 @@ namespace FaceOnly
 				var size = e.NewSize;
 				mask.Height = size.Height;
 				mask.Width = size.Width;
-			};
-
-			if (!Core.Game.IsInMenu)
-				mask.Masked = true;
+			};	  
 		}
 
         public void OnUnload()
@@ -98,6 +95,7 @@ namespace FaceOnly
 
         public void OnUpdate()
         {
-        }
+			mask.OnUpdate();
+		}
     }
 }

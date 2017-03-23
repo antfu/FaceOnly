@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Hearthstone_Deck_Tracker;
+using Hearthstone_Deck_Tracker.API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +21,9 @@ namespace FaceOnly
 	/// </summary>
 	public partial class Mask : UserControl
 	{
-		private bool _masked = false;		 
-		private bool _enabled = true;
+		private bool _masked = false;
+		private bool _defaultStatus = false;
+		private bool _hoverOnToggler = false;
 
 		public Mask()
 		{
@@ -44,22 +47,24 @@ namespace FaceOnly
 		public void GameStart()
 		{
 			Visibility = Visibility.Visible;
-			if (_enabled)
-				Masked = true;
+			Masked = _defaultStatus;
 		}
 
-		public void TurnStart() {					  
+		public void TurnStart()
+		{
 		}
 
-		public string Color {
-			set {
+		public string Color
+		{
+			set
+			{
 				bg.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(value));
 			}
 		}
 
 		public void GameEnd()
-		{				
-			Visibility = Visibility.Hidden;				
+		{
+			Visibility = Visibility.Hidden;
 			Masked = false;
 		}
 
@@ -67,11 +72,27 @@ namespace FaceOnly
 		{
 
 		}
+		private void Toggle()
+		{
+			Toggle(null, null);
+		}
 
 		private void Toggle(object sender, RoutedEventArgs e)
 		{
 			Masked = !Masked;
 		}
-	}
 
+		public void OnUpdate()
+		{
+			var pos = User32.GetMousePos();
+			var p = toggler.PointFromScreen(new Point(pos.X, pos.Y));
+
+			var hovered = p.X > 0 && p.X < toggler.ActualWidth && p.Y > 0 && p.Y < toggler.ActualHeight;
+			if (!_hoverOnToggler && hovered)
+			{
+				Toggle();
+			}
+			_hoverOnToggler = hovered;
+		}
+	}
 }
