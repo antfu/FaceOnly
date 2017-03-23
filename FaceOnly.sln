@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceOnly", "FaceOnly.csproj", "{DE1874B3-3A3A-49F2-BE26-A8DA7E22A086}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceOnly", "src/FaceOnly.csproj", "{DE1874B3-3A3A-49F2-BE26-A8DA7E22A086}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
