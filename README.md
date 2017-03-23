@@ -1,7 +1,7 @@
 # FaceOnly
 FaceOnly is a plugin for the [Hearthstone Deck Tracker](https://github.com/HearthSim/Hearthstone-Deck-Tracker).  
 
-FaceOnly covers your opponent's minions so you can focus on **FACE**!!
+FaceOnly covers your opponent's minions so that you can focus on **FACE**!!
 It's just a toy for face decks, inspired from [this reddit](https://www.reddit.com/r/hearthstone/comments/30b5dn/how_to_play_face_hunter_properly/).
 
 * **Face Decks**

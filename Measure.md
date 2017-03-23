@@ -2,6 +2,8 @@ Measure the hero position from screenshot
 
 These data from my screenshot with 1825x1027:
 
+![image](https://cloud.githubusercontent.com/assets/11247099/24271072/c1ec43c2-1052-11e7-96dc-845b3d4dc9a3.png)
+
 | Subject | Measured(px) | Rate to Window Height
 | ---             | ---  |
 | Window Height   | 1027 | 1
