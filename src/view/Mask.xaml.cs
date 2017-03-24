@@ -24,11 +24,23 @@ namespace HDT.Plugins.FaceOnly
 		private bool _masked = false;
 		private bool _defaultStatus = false;
 		private bool _hoverOnToggler = false;
+		private SolidColorBrush _color;
+		private SolidColorBrush _trans;
+		private List<Label> _cards;
 
 		public Mask()
 		{
 			InitializeComponent();
 			Masked = false;
+			_cards = new List<Label>(7);
+			_cards.Add(card1);
+			_cards.Add(card2);
+			_cards.Add(card3);
+			_cards.Add(card4);
+			_cards.Add(card5);
+			_cards.Add(card6);
+			_cards.Add(card7);
+			_trans = new SolidColorBrush(Colors.Transparent);
 		}
 
 		public bool Masked
@@ -46,6 +58,8 @@ namespace HDT.Plugins.FaceOnly
 
 		public void GameStart()
 		{
+			CountChanged(0);
+			ResetTaunt();
 			Visibility = Visibility.Visible;
 			Masked = _defaultStatus;
 		}
@@ -58,7 +72,8 @@ namespace HDT.Plugins.FaceOnly
 		{
 			set
 			{
-				bg.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(value));
+				_color = new SolidColorBrush((Color)ColorConverter.ConvertFromString(value));
+				bg.Background = _color;
 			}
 		}
 
@@ -68,10 +83,28 @@ namespace HDT.Plugins.FaceOnly
 			Masked = false;
 		}
 
-		public void HasTaunt(int position, int count)
-		{
-
+		public void ResetTaunt() {
+			foreach(var card in _cards)
+				card.Background = _color;
 		}
+
+		public void Reset(int position)
+		{
+			if (position < _cards.Count)
+				_cards[position].Background = _color;
+		}
+
+		public void CountChanged(int count)
+		{
+			for (int i = 0; i < 7; i++)
+				_cards[i].Visibility = i < count ? Visibility.Visible : Visibility.Collapsed;	
+		}
+
+		public void SetTaunt(int position) {
+			if (position < _cards.Count)
+				_cards[position].Background = null;
+		}
+
 		private void Toggle()
 		{
 			Toggle(null, null);

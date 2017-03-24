@@ -5,14 +5,16 @@ using Hearthstone_Deck_Tracker.API;
 using Hearthstone_Deck_Tracker.Plugins;
 using System.ComponentModel;
 using System.Windows.Data;
+using HearthDb.Enums;
+using System.Linq;
 
 namespace HDT.Plugins.FaceOnly
 {
 	public class FaceOnly : IPlugin
 	{
 		private Mask mask;
-		private float opacity = 0.98f;
-		private String colorHex = "#000000";
+		private float opacity = 1f;
+		private String colorHex = "#32302f";
 		private bool gameStarted = false;
 		private bool mulliganDone = false;
 
@@ -70,7 +72,7 @@ namespace HDT.Plugins.FaceOnly
 				gameStarted = false;
 				mask.GameEnd();
 			});
-
+   
 			Canvas.SetTop(mask, -2);
 			Canvas.SetLeft(mask, 0);
 			Canvas.SetBottom(mask, 0);
@@ -119,6 +121,24 @@ namespace HDT.Plugins.FaceOnly
 				if (!mulliganDone && Core.Game.IsMulliganDone)
 					mask.GameStart();
 				mulliganDone = Core.Game.IsMulliganDone;
+
+				if (mask.Masked){
+					mask.CountChanged(Core.Game.OpponentMinionCount);
+
+					var oppBoard = Core.Game.Opponent.Board.Where(x => x.IsMinion).OrderBy(x => x.GetTag(GameTag.ZONE_POSITION)).ToList();
+
+					int i = 0;
+					foreach (var e in oppBoard)
+					{
+						if (e.IsInPlay) {
+							if (e.GetTag(GameTag.TAUNT) == 1)
+								mask.SetTaunt(i);
+							else
+								mask.Reset(i);
+							i++;
+						}
+					}
+				}			
 
 				mask.OnUpdate();
 			}

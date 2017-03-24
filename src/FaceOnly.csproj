@@ -35,6 +35,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HearthDb">
+      <HintPath>.\HearthDb.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="HearthstoneDeckTracker">
       <HintPath>.\HearthstoneDeckTracker.exe</HintPath>
       <Private>False</Private>
