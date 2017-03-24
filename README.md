@@ -6,11 +6,11 @@ It's just a toy for face decks, inspired from [this reddit](https://www.reddit.c
 
 * **Face Decks** Works best with face decks.
 
-* **Taunt** minions can be seen with triangle bottom.
+* **Taunt** minions can be seen.
 
 * **Toggle** Toggle button is just next to your opponent's hero.
 
-![demo](https://cloud.githubusercontent.com/assets/11247099/24270632/f14c1c84-1050-11e7-9fe7-45d9f0f77fec.png)
+![demo](https://cloud.githubusercontent.com/assets/11247099/24284104/66a0f6b4-10a4-11e7-981e-422a1f09d3bb.png)
 
 ## Install
 
