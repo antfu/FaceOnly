@@ -31,7 +31,7 @@ namespace HDT.Plugins.FaceOnly
 
 		public string Description
 		{
-			get { return "A funny toy for face attacking decks."; }
+			get { return "A toy for face decks."; }
 		}
 
 		public string Name
@@ -41,7 +41,7 @@ namespace HDT.Plugins.FaceOnly
 
 		public Version Version
 		{
-			get { return new Version(0, 0, 3); }
+			get { return new Version(0, 0, 4); }
 		}
 		#endregion
 

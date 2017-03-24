@@ -11,7 +11,7 @@
              d:DesignHeight="600" d:DesignWidth="1000">
 	<UserControl.Resources>
 		<local:MathConverter x:Key="MathConverter" />
-		<Canvas x:Key="TauntBack" x:Shared="False" Width="129" Height="134" HorizontalAlignment="Center" VerticalAlignment="Top" SnapsToDevicePixels="True">
+		<Canvas x:Key="TauntBack" x:Shared="False" Width="129" Height="134" HorizontalAlignment="Center" VerticalAlignment="Top">
 			<Canvas.RenderTransform>
 				<ScaleTransform ScaleX="{Binding ActualHeight, ConverterParameter=@VALUE*.00097371, Converter={StaticResource MathConverter}, ElementName=root}" 
 												ScaleY="{Binding ActualHeight, ConverterParameter=@VALUE*.00097371, Converter={StaticResource MathConverter}, ElementName=root}"
@@ -116,7 +116,7 @@
 							<ColumnDefinition />
 						</Grid.ColumnDefinitions>
 
-						<StackPanel Grid.Column="1" Orientation="Horizontal" SnapsToDevicePixels="True">
+						<StackPanel Grid.Column="1" Orientation="Horizontal" SnapsToDevicePixels="False">
 							<Label x:Name="card1" ClipToBounds="True" Width="{Binding ActualHeight, ConverterParameter=@VALUE*0.127555988, Converter={StaticResource MathConverter}, ElementName=root}" Content="{StaticResource TauntBack}"/>
 							<Label x:Name="card2" ClipToBounds="True" Width="{Binding ActualHeight, ConverterParameter=@VALUE*0.127555988, Converter={StaticResource MathConverter}, ElementName=root}" Content="{StaticResource TauntBack}"/>
 							<Label x:Name="card3" ClipToBounds="True" Width="{Binding ActualHeight, ConverterParameter=@VALUE*0.127555988, Converter={StaticResource MathConverter}, ElementName=root}" Content="{StaticResource TauntBack}"/>
