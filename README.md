@@ -10,7 +10,7 @@ It's just a toy for face decks, inspired from [this reddit](https://www.reddit.c
 
 * **Toggle** Toggle button is just next to your opponent's hero.
 
-![demo](https://cloud.githubusercontent.com/assets/11247099/24284104/66a0f6b4-10a4-11e7-981e-422a1f09d3bb.png)
+![demo](https://cloud.githubusercontent.com/assets/11247099/24334639/4cebd07e-12a0-11e7-9ea4-f40a086b6a39.png)
 
 ## Install
 
