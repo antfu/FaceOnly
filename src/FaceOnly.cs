@@ -73,27 +73,21 @@ namespace HDT.Plugins.FaceOnly
 				mask.GameEnd();
 			});
    
-			Canvas.SetTop(mask, -2);
+			Canvas.SetTop(mask, -1);
 			Canvas.SetLeft(mask, 0);
 			Canvas.SetBottom(mask, 0);
 			Canvas.SetRight(mask, 0);
 			Canvas.SetZIndex(mask, -1);
 
-			Binding widthBinding = new Binding();
-			widthBinding.Mode = BindingMode.OneWay;
-			widthBinding.Source = Core.OverlayCanvas.ActualWidth;
-			mask.SetBinding(Canvas.WidthProperty, widthBinding);
-
-			Binding heightBinding = new Binding();
-			heightBinding.Mode = BindingMode.OneWay;
-			heightBinding.Source = Core.OverlayCanvas.ActualHeight;
-			mask.SetBinding(Canvas.HeightProperty, heightBinding);
+			var size = Core.OverlayCanvas.RenderSize;
+			mask.Height = size.Height;
+			mask.Width = size.Width;						  
 
 			Core.OverlayCanvas.SizeChanged += (s, e) =>
 			{
-				var size = e.NewSize;
-				mask.Height = size.Height;
-				mask.Width = size.Width;
+				var newSize = e.NewSize;
+				mask.Height = newSize.Height;
+				mask.Width = newSize.Width;
 			};
 
 			mulliganDone = Core.Game.IsMulliganDone;
